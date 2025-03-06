@@ -54,6 +54,8 @@ const Budget = () => {
       setError("Failed to set budget. Please try again.")
     }
   }
+  
+
 
   if (loading) {
     return <div>Loading...</div>
@@ -72,13 +74,15 @@ const Budget = () => {
           <FaMoneyBillWave className="text-green-500" size={24} />
         </div>
         {/* <p className="text-3xl font-bold">{budget ? `$${budget.amount.toFixed(2)}` : "Not set"}</p> */}
+      
         <p className="text-3xl font-bold">
-          {budget && typeof budget.amount === "number"
-            ? `$${budget.amount.toFixed(2)}`
+          {budget && budget.amount
+            ? `$${parseFloat(budget.amount).toFixed(2)}`
             : "Not set"}
         </p>
-
       </div>
+
+
       <form onSubmit={handleSetBudget} className="bg-white p-6 rounded-lg shadow">
         <h3 className="text-lg font-semibold mb-4">Set New Budget</h3>
         <div className="flex items-center">

@@ -72,6 +72,22 @@ app.post("/api/auth/login", async (req, res) => {
   }
 })
 
+
+
+//user routes
+app.get("/api/user", authenticateToken, async (req, res) => {
+  try {
+    const [users] = await pool.query("SELECT name FROM users WHERE id = ?", [req.user.id])
+    if (users.length > 0) {
+      res.json({ name: users[0].name })
+    } else {
+      res.status(404).json({ error: "User not found" })
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching user data" })
+  }
+})
+
 // Device routes
 app.get("/api/devices", authenticateToken, async (req, res) => {
   try {
@@ -186,7 +202,7 @@ app.listen(PORT, () => {
 
 
 
-//another one
+// another one
 app.post("/api/devices", authenticateToken, async (req, res) => {
   try {
     console.log("Adding device for user:", req.user.id);
