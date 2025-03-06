@@ -63,7 +63,7 @@ Receive notifications when consumption exceeds set thresholds.
 
 ### **Frontend**
 - React.js
-- HTML, CSS, JavaScript
+- HTML, CSS, JavaScript, Tailwind CSS
 
 ### **Backend**
 - Node.js, Express.js
