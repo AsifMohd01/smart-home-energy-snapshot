@@ -122,5 +122,5 @@ If you'd like to contribute:
 
 ## Contact
 
-For any inquiries or issues, please contact **[asifmohdt2020@gmail.com](mailto:asifmohdt2020@gmail.com)**.
+For any inquiries or issues, please contact **[asif.mohd@campusuvce.in](mailto:asif.mohd@campusuvce.in)**.
 
