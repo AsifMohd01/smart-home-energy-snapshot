@@ -1,0 +1,46 @@
+"use client"
+import { FaBell, FaBars, FaUser } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
+
+const Header = ({ setSidebarOpen }) => {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
+
+  return (
+    <header className="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+      <div className="flex items-center">
+        <button className="text-gray-500 mr-4 md:hidden" onClick={() => setSidebarOpen(true)}>
+          <FaBars size={24} />
+        </button>
+        <h1 className="text-xl font-bold">Energy Monitor</h1>
+      </div>
+      <div className="flex items-center">
+        <button className="text-gray-500 mr-4 relative">
+          <FaBell size={24} />
+          <span className="absolute top-0 right-0 bg-red-500 rounded-full w-2 h-2"></span>
+        </button>
+        <div className="relative group">
+          <button className="flex items-center text-gray-700">
+            <FaUser className="mr-2" />
+            <span>User</span>
+          </button>
+          <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+            <button
+              onClick={handleLogout}
+              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Header
+
