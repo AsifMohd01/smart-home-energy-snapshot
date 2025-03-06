@@ -222,8 +222,8 @@ setInterval(async () => {
   } catch (error) {
     console.error("Error generating simulated energy data:", error);
   }
-}, 3600); // Every minute
-
+}, 3600); // It runs every 3.6 seconds
+// }. 3600000);  //It runs every Hour
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
