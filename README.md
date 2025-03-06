@@ -59,6 +59,9 @@ Receive notifications when consumption exceeds set thresholds.
 ### **Logout**
 ![Device Usage](/screenshots/LogoutButtton.png)
 
+### **Budget Exceeded**
+![Device Usage](/screenshots/EnergyBudgetExceeded.png)
+
 ## Tech Stack
 
 ### **Frontend**
@@ -102,7 +105,7 @@ Create a `.env` file and add database credentials.
 ```bash
 npm start
 ```
-The application should be accessible at `http://localhost:3000`.
+The application should be accessible at `http://localhost:5173`.
 
 ## Usage
 
